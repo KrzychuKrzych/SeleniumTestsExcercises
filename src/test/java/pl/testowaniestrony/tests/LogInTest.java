@@ -18,12 +18,4 @@ public class LogInTest extends BaseTest {
         Assert.assertEquals(dashboardLink.getText(), "Dashboard");
     }
 
-    @Test
-    public void logInWithInvalidPasswordTest() {
-        WebElement error = new HomePage(driver)
-                .openMyAccountPage()
-                .loginInvalidData("test@test.pl", "tes")
-                .getError();
-        Assert.assertTrue(error.getText().contains("Too many failed login attempts"), "Expected error text doesn't match");
-    }
 }
